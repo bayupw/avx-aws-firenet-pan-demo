@@ -94,7 +94,7 @@ variable "gw_instance_size" {
 
 variable "ha_gw" {
   type        = bool
-  default     = true
+  default     = false
   description = "Enable HA gateway"
 }
 

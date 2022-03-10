@@ -87,7 +87,7 @@ EOF
 resource "aws_security_group" "spoke2_instance_sg" {
   name        = "spoke2/sg-instance"
   description = "Allow all traffic from VPCs inbound and all outbound"
-  vpc_id      = module.spoke1.vpc.vpc_id
+  vpc_id      = module.spoke2.vpc.vpc_id
 
   ingress {
     from_port   = 0
