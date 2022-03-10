@@ -2,7 +2,7 @@
 
 The code provided is for demo purposes only.
 
-![Aviatrix Firenet Palo Alto Networks on AWS Demo Topology](images/avx-aws-pan-demo.png "Aviatrix Firenet Palo Alto Networks on AWS Demo Topology")
+![Aviatrix Firenet Palo Alto Networks on AWS Demo Topology](images/avx-aws-firenet-pan-demo.png "Aviatrix Firenet Palo Alto Networks on AWS Demo Topology")
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ TF_VAR_aws_account | AWS Aviatrix Account
 Clone the project
 
 ```bash
-git clone https://github.com/bayupw/avx-aws-pan-demo
+git clone https://github.com/bayupw/avx-aws-firenet-pan-demo
 ```
 
 Go to the project directory
