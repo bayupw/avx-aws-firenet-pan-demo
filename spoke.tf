@@ -9,10 +9,10 @@ module "spoke1" {
   cidr          = cidrsubnet(var.supernet, 8, 11)
   region        = var.aws_region
   account       = var.aws_account
-  transit_gw    = module.transit_firenet_1.transit_gateway.gw_name
+  transit_gw    = aviatrix_transit_gateway.firenet_gw.gw_name
   instance_size = var.gw_instance_size
   ha_gw         = var.ha_gw
-  depends_on = [module.transit_firenet_1]
+  depends_on = [aviatrix_transit_gateway.firenet_gw]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -26,10 +26,10 @@ module "spoke2" {
   cidr          = cidrsubnet(var.supernet, 8, 12)
   region        = var.aws_region
   account       = var.aws_account
-  transit_gw    = module.transit_firenet_1.transit_gateway.gw_name
+  transit_gw    = aviatrix_transit_gateway.firenet_gw.gw_name
   instance_size = var.gw_instance_size
   ha_gw         = var.ha_gw
-  depends_on = [module.transit_firenet_1]
+  depends_on = [aviatrix_transit_gateway.firenet_gw]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
