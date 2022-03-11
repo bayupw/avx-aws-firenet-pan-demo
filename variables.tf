@@ -41,6 +41,7 @@ variable "bootstrap_bucket" {
 
 variable "aws_account" {
   type        = string
+  default = "aws-account"
   description = "AWS access account"
 }
 

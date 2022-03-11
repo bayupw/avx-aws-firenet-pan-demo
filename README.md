@@ -65,7 +65,7 @@ terraform apply -auto-approve
 | aws_iam_role | Bootstrap IAM role name | `bootstrap-VM-S3-role` | no |
 | aws_iam_policy | Bootstrap IAM policy | `bootstrap-VM-S3-policy` | no |
 | bootstrap_bucket | Bootstrap S3 bucket name | `pan-bootstrap-bucket` | no |
-| aws_account | AWS Account for Aviatrix Controller | `null` | yes |
+| aws_account | AWS Account for Aviatrix Controller | `aws-account` | yes |
 | firenet_vpc | Firenet VPC name | `firenet-vpc` | no |
 | firenet_vpc_cidr | Firenet VPC CIDR block size | `10.0.0.0/23` | no |
 | firenet_gw | Firenet gateway name | `firenet-gw` | no |
