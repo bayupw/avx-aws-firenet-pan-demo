@@ -47,19 +47,25 @@ variable "aws_account" {
 
 variable "firenet_vpc" {
   type        = string
-  default     = "firenet-vpc"
+  default     = "pan-firenet-vpc"
   description = "Firenet VPC name"
 }
 
-variable "firenet_vpc_cidr" {
+variable "spoke1_vpc" {
   type        = string
-  default     = "10.0.0.0/23"
-  description = "Firenet VPC CIDR block size"
+  default     = "pan-spoke1-vpc"
+  description = "Spoke1 VPC name"
+}
+
+variable "spoke2_vpc" {
+  type        = string
+  default     = "pan-spoke2-vpc"
+  description = "Spoke2 VPC name"
 }
 
 variable "firenet_gw" {
   type        = string
-  default     = "firenet-gw"
+  default     = "pan-firenet-gw"
   description = "Firenet gateway name"
 }
 
@@ -71,7 +77,7 @@ variable "firenet_gw_size" {
 
 variable "fw_instance_name" {
   type        = string
-  default     = "fw-instance"
+  default     = "pan-fw-instance"
   description = "Firewall instance name"
 }
 

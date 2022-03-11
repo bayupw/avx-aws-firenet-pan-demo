@@ -5,7 +5,7 @@ module "spoke1" {
   source = "terraform-aviatrix-modules/mc-spoke/aviatrix"
 
   cloud         = "AWS"
-  name          = "spoke1"
+  name          = var.spoke1_vpc
   cidr          = cidrsubnet(var.supernet, 8, 11)
   region        = var.aws_region
   account       = var.aws_account
@@ -22,7 +22,7 @@ module "spoke2" {
   source = "terraform-aviatrix-modules/mc-spoke/aviatrix"
 
   cloud         = "AWS"
-  name          = "spoke2"
+  name          = var.spoke2_vpc
   cidr          = cidrsubnet(var.supernet, 8, 12)
   region        = var.aws_region
   account       = var.aws_account
