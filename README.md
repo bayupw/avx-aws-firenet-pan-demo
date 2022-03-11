@@ -70,16 +70,20 @@ terraform apply -auto-approve
 
 | Name | Description | Default | Required |
 |------|-------------|---------|----------|
+| supernet | AWS Region | `10.1.0.0/16` | no |
 | aws_region | AWS Region | `ap-southeast-2` | no |
 | aws_iam_role | Bootstrap IAM role name | `bootstrap-VM-S3-role` | no |
 | aws_iam_policy | Bootstrap IAM policy | `bootstrap-VM-S3-policy` | no |
 | bootstrap_bucket | Bootstrap S3 bucket name | `pan-bootstrap-bucket` | no |
 | aws_account | AWS Account for Aviatrix Controller | `aws-account` | yes |
-| firenet_vpc | Firenet VPC name | `firenet-vpc` | no |
-| firenet_vpc_cidr | Firenet VPC CIDR block size | `10.0.0.0/23` | no |
-| firenet_gw | Firenet gateway name | `firenet-gw` | no |
+| firenet_vpc | Firenet VPC name | `pan-firenet-vpc` | no |
+| spoke1_vpc | Firenet VPC name | `pan-spoke1-vpc` | no |
+| firenet_vpc | Firenet VPC name | `pan-spoke2-vpc` | no |
+| spoke2_vpc | Firenet gateway name | `pan-firenet-gw` | no |
 | firenet_gw_size | Transit firenet gateway size | `c5.xlarge` | no |
-| fw_instance_name | Firewall instance name | `fw-instance` | no |
+| fw_instance_name | Firewall instance name | `pan-fw-instance` | no |
 | fw_instance_size | Firewall instance size | `m5.xlarge` | no |
+| gw_instance_size | AWS gateway instance size | `t2.miro` | no |
 | enable_gwlb | Enable AWS Gateway Load Balancer | `false` | no |
+| ha_gw | Enable HA gateway | `false` | no |
 | key_name | Existing SSH public key name | `null` | no |
