@@ -4,6 +4,9 @@ The code provided is for demo purposes only.
 
 ![Aviatrix Firenet Palo Alto Networks on AWS Demo Topology](images/avx-aws-firenet-pan-demo.png "Aviatrix Firenet Palo Alto Networks on AWS Demo Topology")
 
+Password hash for API (admin-api user) is generated via the "request password-hash" CLI command.
+https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000PPkCCAW
+
 ## Prerequisites
 
 Please make sure you have:
@@ -20,6 +23,9 @@ AVIATRIX_CONTROLLER_IP | Aviatrix Controller IP or FQDN
 AVIATRIX_USERNAME | Aviatrix Controller Username
 AVIATRIX_PASSWORD | Aviatrix Controller Password
 TF_VAR_aws_account | AWS Aviatrix Account 
+AWS_ACCESS_KEY_ID | AWS Access Key
+AWS_SECRET_ACCESS_KEY | AWS Secret Access Key
+AWS_DEFAULT_REGION | AWS Default Region
 
 ## Run Locally
 
@@ -41,7 +47,7 @@ Set environment variables
 export AVIATRIX_CONTROLLER_IP="aviatrixcontroller.aviatrix.lab"
 export AVIATRIX_USERNAME="admin"
 export AVIATRIX_PASSWORD="aviatrix123"
-export TF_VAR_aws_account="AWS-Aviatrix-Account"
+export TF_VAR_aws_account="aws-account"
 export AWS_ACCESS_KEY_ID="A1b2C3d4E5"
 export AWS_SECRET_ACCESS_KEY="A1b2C3d4E5"
 export AWS_DEFAULT_REGION="ap-southeast-2"
