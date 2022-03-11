@@ -6,7 +6,7 @@ resource "aviatrix_vpc" "firenet_vpc" {
   account_name         = var.aws_account
   region               = var.aws_region
   name                 = var.firenet_vpc
-  cidr                 = var.firenet_vpc_cidr
+  cidr                 = cidrsubnet(var.supernet, 7, 0)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = true
 }
@@ -76,10 +76,12 @@ resource "aviatrix_firenet" "firenet" {
 resource "aviatrix_transit_firenet_policy" "spoke1_firenet_policy" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.firenet_gw.gw_name
   inspected_resource_name      = "SPOKE:${module.spoke1.spoke_gateway.gw_name}"
+  depends_on                           = [module.spoke1]
 }
 
 # Spoke2 FireNet Policy
 resource "aviatrix_transit_firenet_policy" "spoke2_firenet_policy" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.firenet_gw.gw_name
   inspected_resource_name      = "SPOKE:${module.spoke2.spoke_gateway.gw_name}"
+  depends_on                           = [module.spoke2]
 }

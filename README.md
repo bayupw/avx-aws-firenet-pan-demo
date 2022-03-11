@@ -32,7 +32,7 @@ git clone https://github.com/bayupw/avx-aws-firenet-pan-demo
 Go to the project directory
 
 ```bash
-cd avx-aws-pan-demo
+cd avx-aws-firenet-pan-demo
 ```
 
 Set environment variables
