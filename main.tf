@@ -65,8 +65,8 @@ resource "aviatrix_firewall_instance_association" "fw_instance_assoc" {
 # Create an Aviatrix FireNet
 resource "aviatrix_firenet" "firenet" {
   vpc_id                               = aviatrix_firewall_instance.fw_instance.vpc_id
-  inspection_enabled                   = true
-  egress_enabled                       = false
+  inspection_enabled                   = var.enable_east_west_inspection
+  egress_enabled                       = var.enable_egress
   keep_alive_via_lan_interface_enabled = false
   manage_firewall_instance_association = false
   depends_on                           = [aviatrix_firewall_instance_association.fw_instance_assoc]

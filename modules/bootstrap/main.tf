@@ -25,7 +25,7 @@ locals {
 
 # Create an S3 Bucket
 resource "aws_s3_bucket" "this" {
-  bucket = local.bootstrap_bucket
+  bucket        = local.bootstrap_bucket
   force_destroy = true
 
   tags = {
@@ -59,15 +59,27 @@ resource "aws_s3_object" "bootstrap_folders" {
 resource "aws_s3_object" "bootstrap_xml" {
   bucket = aws_s3_bucket.this.id
   key    = "config/bootstrap.xml"
-  source = "./bootstrap/bootstrap.xml"
-  depends_on = [ aws_s3_object.bootstrap_folders ]
+  #source = "./bootstrap/bootstrap.xml"
+  content = templatefile("${path.module}/bootstrap.xml.tmpl",
+    {
+      "config_version"           = var.config_version,
+      "detail_version"           = var.detail_version,
+      "admin_user"               = var.admin_user,
+      "admin_password_phash"     = var.admin_password_phash,
+      "admin_public_key"         = var.admin_public_key,
+      "admin_api_user"           = var.admin_api_user,
+      "admin_api_profile_name"   = var.admin_api_profile_name,
+      "admin_api_password_phash" = var.admin_api_password_phash
+    }
+  )
+  depends_on = [aws_s3_object.bootstrap_folders]
 }
 
 resource "aws_s3_object" "init-cfg_txt" {
-  bucket = aws_s3_bucket.this.id
-  key    = "config/init-cfg.txt"
-  source = "./bootstrap/init-cfg.txt"
-  depends_on = [ aws_s3_object.bootstrap_folders ]
+  bucket     = aws_s3_bucket.this.id
+  key        = "config/init-cfg.txt"
+  source     = "${path.module}/init-cfg.txt"
+  depends_on = [aws_s3_object.bootstrap_folders]
 }
 
 # ---------------------------------------------------------------------------------------------------------------------

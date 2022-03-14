@@ -11,7 +11,7 @@ https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000PPkCCA
 
 Please make sure you have:
 - Aviatrix Controller 6.6
-- AWS access accounts are onboarded. 
+- AWS access accounts are onboarded. Variable for AWS access account is 'aws_account'
 
 ## Environment Variables
 
@@ -51,12 +51,6 @@ export TF_VAR_aws_account="aws-account"
 export AWS_ACCESS_KEY_ID="A1b2C3d4E5"
 export AWS_SECRET_ACCESS_KEY="A1b2C3d4E5"
 export AWS_DEFAULT_REGION="ap-southeast-2"
-```
-
-Optional environment variables
-
-```bash
-export TF_VAR_enable_gwlb=true
 ```
 
 Terraform workflow
