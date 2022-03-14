@@ -7,6 +7,9 @@ The code provided is for demo purposes only.
 Password hash for API (admin-api user) is generated via the "request password-hash" CLI command.
 https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000PPkCCAW
 
+Default username/password: admin/Aviatrix123#
+Default api username/password: admin-api/Aviatrix123#
+
 ## Prerequisites
 
 Please make sure you have:
@@ -81,3 +84,5 @@ terraform apply -auto-approve
 | enable_gwlb | Enable AWS Gateway Load Balancer | `false` | no |
 | ha_gw | Enable HA gateway | `false` | no |
 | key_name | Existing SSH public key name | `null` | no |
+| wait_bootstrap | Time to wait after the bootstrap is created before launching a firewall instance | `300s` | no |
+| wait_fw_instance | Time to wait after the firewall instance is launched | `600s` | no |
