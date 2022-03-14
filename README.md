@@ -7,8 +7,8 @@ The code provided is for demo purposes only.
 Password hash for API (admin-api user) is generated via the "request password-hash" CLI command.
 https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000PPkCCAW
 
-Default username/password: admin/Aviatrix123#
-Default api username/password: admin-api/Aviatrix123#
+- Default username/password: admin/Aviatrix123#
+- Default api username/password: admin-api/Aviatrix123#
 
 ## Prerequisites
 
